@@ -1,36 +1,5 @@
 $(document).ready(function () {
-  $("#loanAmount-input").on("input", function () {
-    let value = $(this).val();
-    value = value.replace(/\D/g, "");
-    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    $(this).val(value);
-  });
-
-  $("#loanAmount-input").on("blur", function () {
-    let value = $(this).val().replace(/,/g, "");
-    if (!value || isNaN(value) || value <= 0) {
-      this.setCustomValidity("Please enter a valid loan amount.");
-    } else {
-      this.setCustomValidity("");
-    }
-  });
-
-  $("#extraPmt-input").on("input", function () {
-    let value = $(this).val();
-    value = value.replace(/\D/g, "");
-    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    $(this).val(value);
-  });
-
-  $("#extraPmt-input").on("blur", function () {
-    let value = $(this).val().replace(/,/g, "");
-    if (!value || isNaN(value) || value <= 0) {
-      this.setCustomValidity("Please enter a valid loan amount.");
-    } else {
-      this.setCustomValidity("");
-    }
-  });
-
+  //   Example starter JavaScript for disabling form submissions if there are invalid fields
   (function () {
     "use strict";
 

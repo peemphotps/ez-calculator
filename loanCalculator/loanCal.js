@@ -33,11 +33,7 @@ $(document).ready(function () {
 
   (function () {
     "use strict";
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll(".needs-validation");
-
-    // Loop over them and prevent submission
     Array.prototype.slice.call(forms).forEach(function (form) {
       form.addEventListener(
         "submit",
@@ -56,16 +52,12 @@ $(document).ready(function () {
     });
   })();
 
-  //   $("#loanCal-submit-btn").click(function () {
-  //     displayTextWhenClickSubmit();
-  //   });
-
   function displayTextWhenClickSubmit() {
-    const loanAmount = $("#loanAmout-input").val();
+    const loanAmount = $("#loanAmount-input").val().replace(/,/g, "");
     const interestRate = $("#interrestRate-input").val();
     const loanTermYear = $("#loanTerm-year-input").val();
     const loanTermMonth = $("#loanTerm-month-input").val();
-    const extraPmt = $("#extraPmt-input").val();
+    const extraPmt = $("#extraPmt-input").val().replace(/,/g, "");
 
     let PV = Number(loanAmount);
     let n = Number(loanTermMonth) + Number(loanTermYear) * 12;

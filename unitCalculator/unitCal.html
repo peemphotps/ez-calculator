@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
-          ><img src="./image/calculator-fill.svg" alt="calculator icon" /> Ez
+          ><img src="../image/calculator-fill.svg" alt="calculator icon" /> Ez
           calculator</a
         >
 
@@ -35,7 +35,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="../index.html"
                 >Home</a
               >
             </li>
@@ -56,13 +59,13 @@
                 <li>
                   <a
                     class="dropdown-item"
-                    href="./unitCalculator/unitCal.html"
+                    href="./unitCal.html"
                     id="unit-cal-dropdown"
                     >Unit price calculator</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./loanCalculator/loanCal.html"
+                  <a class="dropdown-item" href="../loanCalculator/loanCal.html"
                     >Loan calculator</a
                   >
                 </li>
@@ -87,49 +90,108 @@
     </nav>
 
     <div class="container bg-light" id="unit-price-calculator-div">
-      <h2 class="display-6 fw-bold">Ez calculator</h2>
+      <h2 class="display-6 fw-bold">Unit price calculator</h2>
       <div class="row">
         <div class="col-sm-6 mb-3 mb-sm-0">
           <div class="card">
             <div class="card-body">
-              <h3 class="card-title col-xs-1 text-center">
-                Unit price Calculator
-              </h3>
-              <div class="text-center mt-5">
-                <button
-                  class="btn frist-submit-btn btn-dark col-4"
-                  type="button"
-                  id="unitCal-button-submit-item1"
+              <h5 class="card-title">First Item</h5>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="addon-wrapping"
+                  >Quantity</span
                 >
-                  <a class="dropdown-item" href="./unitCalculator/unitCal.html"
-                    >Go</a
-                  >
-                </button>
+                <input
+                  type="number"
+                  class="form-control first-unit-input"
+                  placeholder="Item quantity"
+                  aria-label="Item quantity"
+                  aria-describedby="button-addon2"
+                />
               </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="addon-wrapping">$</span>
+                <input
+                  type="number"
+                  class="form-control first-price-input"
+                  placeholder="Item price"
+                  aria-label="Item price"
+                  aria-describedby="button-addon2"
+                />
+              </div>
+
+              <p class="card-text hideAtBegining" id="unitCost-firstItem">
+                If you see this it maybe bug please refresh the page
+              </p>
+              <button
+                class="btn frist-submit-btn btn-dark"
+                type="button"
+                id="unitCal-button-submit-item1"
+              >
+                Calculate
+              </button>
             </div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h3 class="card-title col-xs-1 text-center">Loan Calculator</h3>
-              <div class="text-center mt-5">
-                <button
-                  class="btn btn-dark second-submit-btn col-4"
-                  type="button"
-                  id="unitCal-button-submit-item2"
+              <h5 class="card-title">Second Item</h5>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="addon-wrapping"
+                  >Quantity</span
                 >
-                  <a class="dropdown-item" href="./loanCalculator/loanCal.html"
-                    >Go</a
-                  >
-                </button>
+
+                <input
+                  type="number"
+                  class="form-control second-unit-input"
+                  placeholder="Item quantity"
+                  aria-label="Item quantity"
+                  aria-describedby="button-addon2"
+                />
               </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="addon-wrapping">$</span>
+                <input
+                  type="number"
+                  class="form-control second-price-input"
+                  placeholder="Item price"
+                  aria-label="Item price"
+                  aria-describedby="button-addon2"
+                />
+              </div>
+
+              <p class="card-text hideAtBegining" id="unitCost-secondItem">
+                If you see this it maybe bug please refresh the page
+              </p>
+              <button
+                class="btn btn-dark second-submit-btn"
+                type="button"
+                id="unitCal-button-submit-item2"
+              >
+                Calculate
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container container-fluid py-5"></div>
+      <div class="container container-fluid py-5">
+        <h3 class="display-7 fw-bold">Unit price comparison</h3>
+        <p
+          class="col-md-8 fs-4 hideAtBegining bg-white rounded"
+          id="compare-item-box"
+        >
+          If you see this it maybe bug please refresh the page
+        </p>
+        <button
+          class="btn btn-primary btn-dark"
+          type="button"
+          id="unit-compare-btn"
+        >
+          Compare
+        </button>
+      </div>
     </div>
 
     <script
@@ -138,6 +200,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+    <script src="./unitCal.js"></script>
   </body>
 </html>

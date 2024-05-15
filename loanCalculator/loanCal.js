@@ -22,14 +22,14 @@ $(document).ready(function () {
     $(this).val(value);
   });
 
-  $("#extraPmt-input").on("blur", function () {
-    let value = $(this).val().replace(/,/g, "");
-    if (!value || isNaN(value) || value <= 0) {
-      this.setCustomValidity("Please enter a valid loan amount.");
-    } else {
-      this.setCustomValidity("");
-    }
-  });
+  //   $("#extraPmt-input").on("blur", function () {
+  //     let value = $(this).val().replace(/,/g, "");
+  //     if (!value || isNaN(value) || value <= 0) {
+  //       this.setCustomValidity("Please enter a valid loan amount.");
+  //     } else {
+  //       this.setCustomValidity("");
+  //     }
+  //   });
 
   (function () {
     "use strict";
@@ -64,13 +64,24 @@ $(document).ready(function () {
     let i = Number(interestRate) / 100 / 12;
     let x = Number(extraPmt);
 
-    // Calculate PMT using the formula for monthly mortgage payments
     let PMT = (PV * i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
     if (PMT) {
-      $("#monthlyPmt-text").text(`${PMT.toFixed(2)}`);
-      $("#TotalPmt-text").text(`${(PMT * n).toFixed(2)}`);
-      $("#totalInterrest-text").text(`${(PMT * n - PV).toFixed(2)}`);
-      $("#annualPmt-text").text(`${(PMT * 12).toFixed(2)}`);
+      pmtComma = String(Math.floor(PMT)).replace(/\D/g, "");
+      pmtComma = pmtComma.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      totalPmt = String(Math.floor(PMT * n)).replace(/\D/g, "");
+      totalPmt = totalPmt.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      totalItr = String(Math.floor(PMT * n - PV)).replace(/\D/g, "");
+      totalItr = totalItr.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      annualPmt = String(Math.floor(PMT * 12)).replace(/\D/g, "");
+      annualPmt = annualPmt.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      $("#monthlyPmt-text").text(pmtComma);
+      $("#TotalPmt-text").text(totalPmt);
+      $("#totalInterrest-text").text(totalItr);
+      $("#annualPmt-text").text(annualPmt);
     }
   }
 });

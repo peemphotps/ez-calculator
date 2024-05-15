@@ -39,7 +39,7 @@ function unitCalculation(unit, price) {
   //   $(".first-price-input").text();
   var unitCost = Number(getValue) / Number(getUnit);
   console.log(unitCost);
-  return unitCost.toFixed(2);
+  return unitCost.toFixed(3);
 }
 
 function unitComparison() {
@@ -56,8 +56,10 @@ function unitComparison() {
     return (
       "Item One : " +
       unitCostItemOne +
+      " Per item" +
       "\nItem Two : " +
       unitCostItemTwo +
+      " Per item" +
       "\n" +
       "Item One is Cheaper"
     );
@@ -65,8 +67,10 @@ function unitComparison() {
     return (
       "Item One : " +
       unitCostItemOne +
+      " Per item" +
       "\nItem Two : " +
       unitCostItemTwo +
+      " Per item" +
       "\n" +
       "Item Two is Cheaper"
     );

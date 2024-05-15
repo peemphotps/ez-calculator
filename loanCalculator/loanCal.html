@@ -64,9 +64,9 @@
             <div class="card-body">
                 <form class="g-3 needs-validation" novalidate>
                     <div class="row">
-                        <div class="g-col-6 g-col-md-4">
+                        <div class="g-col-6 g-col-md-4 mt-4">
                             <label for="validationCustom01" class="form-label">Loan Amount</label>
-                            <input type="number" class="form-control" id="loanAmout-input"
+                            <input type="text" class="form-control" id="loanAmount-input"
                                 placeholder="Input Loan amount" required />
                             <div class="valid-feedback"></div>
                             <div class="invalid-feedback">Please provide Loan Amount.</div>
@@ -75,7 +75,7 @@
                         <div class="g-col-6 g-col-md-4 mt-4">
                             <label for="validationCustom02" class="form-label">Interest Rate</label>
                             <div class="input-group has-validation">
-                                <input type="number" class="form-control" id="interrestRate-input"
+                                <input type="number" step=".01" class="form-control" id="interrestRate-input"
                                     aria-describedby="inputGroupPrepend" placeholder="Input Interest Rate" required />
                                 <span class="input-group-text" id="inputGroupPrepend">% per years</span>
                                 <div class="invalid-feedback">
@@ -103,7 +103,7 @@
                         <div class="g-col-6 g-col-md-4 mt-4">
                             <label for="validationCustom02" class="form-label">Extra payment a Month</label>
                             <div class="input-group">
-                                <input type="number" class="form-control" id="extraPmt-input"
+                                <input type="text" class="form-control" id="extraPmt-input"
                                     aria-describedby="inputGroupPrepend" placeholder="Input Extra payment" />
                             </div>
                         </div>
